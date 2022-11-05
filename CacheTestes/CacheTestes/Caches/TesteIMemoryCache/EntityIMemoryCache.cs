@@ -11,7 +11,18 @@ namespace CacheTestes.Caches.TesteIMemoryCache
             => _cache = cache;
 
         public void AddCache(Entity[] ent)
-            => _cache.Set<Entity[]>(key: KEY_ENTITY_CACHE, value: ent);
+        {
+            var options = new MemoryCacheEntryOptions()
+            {
+                SlidingExpiration = TimeSpan.FromSeconds(1),
+                AbsoluteExpirationRelativeToNow = TimeSpan.FromDays(1)
+            };
+
+            _cache.Set<Entity[]>(
+                key: KEY_ENTITY_CACHE, 
+                value: ent,
+                options: options);
+        }
 
         public Entity[] GetEntityCache()
             => _cache.Get<Entity[]>(key: KEY_ENTITY_CACHE);
