@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Caching.Memory;
 
-namespace CacheTestes.Caches.TesteIMemoryCache
+namespace CacheTestes.Caching.TesteIMemoryCache
 {
     public class EntityIMemoryCache
     {
