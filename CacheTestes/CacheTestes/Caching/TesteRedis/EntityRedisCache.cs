@@ -26,7 +26,7 @@ namespace CacheTestes.Caching.TesteRedis
 
         public async Task SetAsync(string key, string value)
         {
-            throw new NotImplementedException();
+            await _cache.SetStringAsync(key, value, _options);
         }
     }
 }
