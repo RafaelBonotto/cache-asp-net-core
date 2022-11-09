@@ -1,4 +1,4 @@
-using CacheTestes.Caches.TesteIMemoryCache;
+using CacheTestes.Caching.TesteIMemoryCache;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CacheTestes.Controllers
