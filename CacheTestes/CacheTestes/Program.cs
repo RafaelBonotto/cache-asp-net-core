@@ -1,4 +1,5 @@
 using CacheTestes.Caches.TesteIMemoryCache;
+using CacheTestes.Caching.TesteIMemoryCache;
 
 var builder = WebApplication.CreateBuilder(args);
 
