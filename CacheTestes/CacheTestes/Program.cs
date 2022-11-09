@@ -1,4 +1,3 @@
-using CacheTestes.Caches.TesteIMemoryCache;
 using CacheTestes.Caching.TesteIMemoryCache;
 using CacheTestes.Caching.TesteRedis;
 
@@ -17,7 +16,7 @@ builder.Services.AddMemoryCache();
 //Redis
 builder.Services.AddStackExchangeRedisCache(x => {
     x.InstanceName = "instance";
-    x.Configuration = "localhost";
+    x.Configuration = "localhost:7273";
 });
 
 //Injeção de depêndencia

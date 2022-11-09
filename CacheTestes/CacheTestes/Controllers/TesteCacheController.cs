@@ -10,6 +10,7 @@ namespace CacheTestes.Controllers
     {
         private readonly EntityIMemoryCache _imemoryCache;
         private readonly EntityRedisCache _redisCache;
+        public const string REDIS_KEY = "REDIS_KEY";
 
         public TesteCacheController(
             EntityIMemoryCache imemoryCache, 
@@ -42,23 +43,19 @@ namespace CacheTestes.Controllers
         }
 
         [HttpGet("redis")]
-        public IActionResult GetEntityRedis()
+        public async Task<IActionResult> GetEntityRedis()
         {
-            Entity[] ret;
+            string ret;
 
-            ret = _imemoryCache.GetEntityCache();
+            ret = await _redisCache.GetAsync(REDIS_KEY);
 
-            if (ret is null || !ret.Any())
+            if (string.IsNullOrEmpty(ret))
             {
                 // Aqui chama o repositório
-                ret = new Entity[]
-                {
-                    new Entity{ Id = 1, Descricao = "Entity-1"},
-                    new Entity{ Id = 2, Descricao = "Entity-2"},
-                    new Entity{ Id = 3, Descricao = "Entity-3"}
-                };
+                ret = "Id: 1, Descricao: Entity-1";
+                
                 // Adiciona no cache
-                _imemoryCache.AddEntityCache(ret);
+                await _redisCache.SetAsync(REDIS_KEY, ret);
             }
             return Ok(ret);
         }
