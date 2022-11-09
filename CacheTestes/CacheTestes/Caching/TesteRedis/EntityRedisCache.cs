@@ -7,10 +7,16 @@ namespace CacheTestes.Caching.TesteRedis
         // package => Microsoft.Extensions.Caching.StackExchangeRedis
 
         private readonly IDistributedCache _cache;
+        private readonly DistributedCacheEntryOptions _options;
 
         public EntityRedisCache(IDistributedCache cache)
         {
             _cache = cache;
+            _options = new DistributedCacheEntryOptions
+            {
+                AbsoluteExpirationRelativeToNow = TimeSpan.FromSeconds(3600), // Tempo absoluto para expiração
+                SlidingExpiration = TimeSpan.FromSeconds(1200),               // Tempo sem acesso para expiração
+            };
         }
 
         public async Task<string> GetAsync(string key)
