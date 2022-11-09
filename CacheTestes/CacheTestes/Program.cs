@@ -1,5 +1,6 @@
 using CacheTestes.Caches.TesteIMemoryCache;
 using CacheTestes.Caching.TesteIMemoryCache;
+using CacheTestes.Caching.TesteRedis;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +22,7 @@ builder.Services.AddStackExchangeRedisCache(x => {
 
 //Injeção de depêndencia
 builder.Services.AddScoped<EntityIMemoryCache>();
+builder.Services.AddScoped<EntityRedisCache>();
 
 var app = builder.Build();
 
