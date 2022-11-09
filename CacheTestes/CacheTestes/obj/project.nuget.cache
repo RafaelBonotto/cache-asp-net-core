@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "WBL/oYVQIu0nhja0dqJo7juJu0oQxUMPRban/1Y4xmhUVAbU6EoUXlyEz5egsExWipSv0+eqcrxlKmLB4cGpKQ==",
+  "dgSpecHash": "vp4idCQvQF2XJpRwhkbKaBIrUH+cL6juxvsmwmo7DFFlrCMh2UJRNv0S5lCNYTpP0SbYHZGVo61G/6HTzp4d6w==",
   "success": true,
   "projectFilePath": "C:\\Users\\rbonotto\\Documents\\Pessoal\\Projetos\\Git\\cache.netCore\\CacheTestes\\CacheTestes\\CacheTestes.csproj",
   "expectedPackageFiles": [
@@ -14,6 +14,7 @@
     "C:\\Users\\rbonotto\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\rbonotto\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\rbonotto\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "C:\\Users\\rbonotto\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\rbonotto\\.nuget\\packages\\pipelines.sockets.unofficial\\2.2.0\\pipelines.sockets.unofficial.2.2.0.nupkg.sha512",
     "C:\\Users\\rbonotto\\.nuget\\packages\\stackexchange.redis\\2.2.4\\stackexchange.redis.2.2.4.nupkg.sha512",
     "C:\\Users\\rbonotto\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",

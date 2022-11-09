@@ -1,6 +1,8 @@
 using CacheTestes.Caching.TesteIMemoryCache;
 using CacheTestes.Caching.TesteRedis;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace CacheTestes.Controllers
 {
@@ -53,11 +55,13 @@ namespace CacheTestes.Controllers
             {
                 // Aqui chama o repositório
                 ret = "Id: 1, Descricao: Entity-1";
-                
+
+                var value = JsonConvert.SerializeObject(ret);
                 // Adiciona no cache
-                await _redisCache.SetAsync(REDIS_KEY, ret);
+                await _redisCache.SetAsync(REDIS_KEY, value);
             }
-            return Ok(ret);
+            var resp = JsonConvert.DeserializeObject<dynamic>(ret);
+            return Ok(resp);
         }
     }
 }
