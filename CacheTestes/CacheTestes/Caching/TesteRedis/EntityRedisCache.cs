@@ -15,7 +15,7 @@ namespace CacheTestes.Caching.TesteRedis
 
         public async Task<string> GetAsync(string key)
         {
-            throw new NotImplementedException();
+            return await _cache.GetStringAsync(key);
         }
 
         public async Task SetAsync(string key, string value)
